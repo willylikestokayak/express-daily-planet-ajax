@@ -1,3 +1,11 @@
-<h1>Welcome to the Daily Planet!</h1>
+<h1>Articles</h1>
 
-<a href="/articles">Check out my sweet articles</a>
+<a href="/articles/new" class="btn btn-primary">New Articles</a>
+
+<% articles.forEach(function(article, idx) { %>
+	<div class="well">
+		<a href="/articles/<%= idx %>">h2><%= article.title %></h2></a>
+		<a href="/articles/edit/ <%= idx %>">Edit</a>
+})
+
+

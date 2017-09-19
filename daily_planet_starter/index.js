@@ -44,6 +44,13 @@ app.get('/about', function(req, res) {
     res.render('about');
 });
 
+app.put('/articles/:id/edit', function(req, res) {
+    var articleId = parseInt(req.params.id);
+    articles[articleId].title = req.body.title;
+    articles[articleId].body = req.body.body;
+    res.send({message: 'success'});
+})
+
 app.listen(3000, function() {
     console.log("You're listening to the smooth sounds of port 3000 in the morning");
 });
